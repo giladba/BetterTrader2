@@ -1,0 +1,37 @@
+{
+  "name": "Instrument",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "displayName": {
+      "type": "string",
+      "required": true
+    },
+    "pip": {
+      "type": "number",
+      "required": true
+    },
+    "maxTradeUnits": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "users": {
+      "type": "hasMany",
+      "model": "user",
+      "foreignKey": "instrumentID",
+      "through": "InstrumentTracking"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

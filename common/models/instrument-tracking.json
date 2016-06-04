@@ -1,0 +1,24 @@
+{
+  "name": "InstrumentTracking",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "instrument": {
+      "type": "belongsTo",
+      "model": "Instrument",
+      "foreignKey": "instrumentID"
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userID"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

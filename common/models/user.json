@@ -1,0 +1,25 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "trackedInstruments": {
+      "type": "array",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "instruments": {
+      "type": "hasMany",
+      "model": "Instrument",
+      "foreignKey": "userID",
+      "through": "InstrumentTracking"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
