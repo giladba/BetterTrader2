@@ -14,7 +14,7 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "mongoDB"
   },
   "AccessToken": {
     "dataSource": "db",
@@ -31,5 +31,24 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Instrument": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "user": {
+    "dataSource": "mongoDB",
+    "public": true,
+    "options": {
+      "emailVerificationRequired": true
+    }
+  },
+  "InstrumentTracking": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Rate": {
+    "dataSource": "mongoDB",
+    "public": true
   }
 }
