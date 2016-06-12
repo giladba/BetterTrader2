@@ -36,12 +36,9 @@
     "dataSource": "mongoDB",
     "public": true
   },
-  "user": {
+  "Client": {
     "dataSource": "mongoDB",
-    "public": true,
-    "options": {
-      "emailVerificationRequired": true
-    }
+    "public": true
   },
   "InstrumentTracking": {
     "dataSource": "mongoDB",

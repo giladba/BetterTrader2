@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('app', ['ionic',
+angular.module('app', ['ionic','app.login','app.register',
  'ui.router',
     'lbServices'
   ])
@@ -12,7 +12,13 @@ angular.module('app', ['ionic',
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
         data : { pageTitle: 'Login' }
+      })
+      .state('register', {
+        url: '/register',
+        templateUrl: 'views/register.html',
+        controller: 'RegisterCtrl'
       })
       .state('empty-list', {
         url: '/empty-list',

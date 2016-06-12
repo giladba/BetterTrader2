@@ -27,7 +27,7 @@
   "relations": {
     "users": {
       "type": "hasMany",
-      "model": "user",
+      "model": "Client",
       "foreignKey": "instrumentID",
       "through": "InstrumentTracking"
     }

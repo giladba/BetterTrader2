@@ -1,14 +1,14 @@
 {
-  "name": "user",
+  "name": "Client",
   "base": "User",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "trackedInstruments": {
-      "type": "array",
-      "required": false
+    "created": {
+      "type": "date",
+      "required": true
     }
   },
   "validations": [],
