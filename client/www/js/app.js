@@ -9,6 +9,11 @@ angular.module('app', ['ionic',
   ])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $stateProvider
+      .state('login', {
+        url: '/login',
+        templateUrl: 'views/login.html',
+        data : { pageTitle: 'Login' }
+      })
       .state('empty-list', {
         url: '/empty-list',
         templateUrl: 'views/empty-list.html',
@@ -20,7 +25,7 @@ angular.module('app', ['ionic',
         data : { pageTitle: 'add-instrument' }
       })
       ;
-      $urlRouterProvider.otherwise('empty-list');
+      $urlRouterProvider.otherwise('login');
   }])
   .run(['$rootScope', '$state', '$stateParams', function($rootScope, $state, $stateParams) {
     $rootScope.$state = $state;

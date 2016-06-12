@@ -14,7 +14,7 @@ var options = {
 
 var pricesDetails = [];
 
-function addInstrumentsParams(){
+function addInstrumentsParams(instNamesArr){
   options.path = "/v1/prices?instruments=";
   for (var i = 0; i < instNamesArr.length; i++) {
     options.path += ((i!=0)?"%2C":"") + instNamesArr[i];
@@ -37,7 +37,7 @@ function buildRatesResponse(str, response) {
   }
 }
 module.exports.getRates = function(instNamesArr, callback) {
-  addInstrumentsParams();
+  addInstrumentsParams(instNamesArr);
 
   https.request(options, function(response) {
     var str = '';
