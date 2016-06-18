@@ -1,5 +1,5 @@
 angular.module('app.login', ['lbServices', 'ionic'])
-  .controller('LoginCtrl', function ($scope, Client, $location, $ionicPopup) {
+  .controller('LoginCtrl', function ($scope, $rootScope, Client, $location, $ionicPopup) {
     console.log("START")
     if (Client.getCachedCurrent()!==null) {
       $location.path('tab/home');
@@ -34,18 +34,28 @@ angular.module('app.login', ['lbServices', 'ionic'])
      * sign-in function for users which created an account
      */
     $scope.login = function () {
-    console.log("LOGIN")
-      $scope.loginResult = Client.login({rememberMe: true}, $scope.credentials,
-        function () {
-          var next = $location.nextAfterLogin || 'empty-list';
-          $location.nextAfterLogin = null;
-          $location.path(next);
-        },
-        function (err) {
-          $scope.loginError = err;
-          $scope.showAlert(err.statusText, err.data.error.message);
-        }
-      );
+      console.log("LOGIN");
+        Client.login({rememberMe: true}, $scope.credentials)
+        .$promise
+            .then(function(response) {
+                console.log("$scope.credentials = " + JSON.stringify($scope.credentials));
+                $rootScope.currentUser = {
+                    id: response.user.id,
+                    tokenId: response.id,
+                };
+                $location.path('instrument-list');
+            });
+      //$scope.loginResult = Client.login({rememberMe: true}, $scope.credentials,
+      //  function () {
+      //    $location.path('instrument-list');
+      //  },
+      //  function (err) {
+      //    $scope.loginError = err;
+      //    $scope.showAlert(err.statusText, err.data.error.message);
+      //  }
+      //);
+
+
     };
     $scope.goToRegister = function () {
       $location.path('register');

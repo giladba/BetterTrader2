@@ -1,0 +1,28 @@
+<ion-view title="Set Market Sense">
+    <div>
+        <!--<h3>instrument={{$stateParams.instrumentToTrack}}</h3>-->
+
+        <div class="card">
+            <div class="item item-text-wrap">
+                <h1>{{$stateParams.instrumentToTrack.displayName}}</h1><span class="item-note"> <h1>38.5 </h1></span>
+            </div>
+        </div>
+
+        <h2>Set alert sensitivity</h2>
+        <div class="item range range-positive">
+            <input type="range" name="volume" min="0" max="1" value={{sense}} step="0.1" ng-model="sense"> {{sense}}
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <div class="row col text-center">
+            <button class="button button-royal" ng-click="cancel()">
+                <i class="ion-android-cancel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancel</i>
+            </button>
+            <button class="button button-royal" ng-click="submit()">
+                <i class="ion-android-done">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submit</i>
+            </button>
+        </div>
+        </ion-content>
+</ion-view>

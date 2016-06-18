@@ -25,10 +25,10 @@
   },
   "validations": [],
   "relations": {
-    "users": {
+    "clients": {
       "type": "hasMany",
       "model": "Client",
-      "foreignKey": "instrumentID",
+      "foreignKey": "instID",
       "through": "InstrumentTracking"
     }
   },

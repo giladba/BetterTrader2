@@ -1,0 +1,15 @@
+<ion-view title="Choose a stock">
+    <ion-content>
+        <ion-list>
+
+            <ion-item class="hand" collection-repeat="item in allInstruments" ui-sref="set-sense({instrumentToTrack:item})">
+                <h2>{{item.displayName}}</h2>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon ion-ios-pricetags"></i> Bid: {{item.bid}}</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon ion-ios-pricetags-outline"></i> Ask: {{item.ask}}</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon ion-arrow-graph-up-right"></i> Pip (price interest point): {{item.pip}}</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="icon ion-ios-filing"></i> Max trade units: {{item.maxTradeUnits}}</p>
+                <p class="item-icon-right"><i class="icon ion-ios-arrow-right"></i> </p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

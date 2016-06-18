@@ -11,7 +11,7 @@
     "instrument": {
       "type": "belongsTo",
       "model": "Instrument",
-      "foreignKey": "instrumentID"
+      "foreignKey": "instID"
     },
     "user": {
       "type": "belongsTo",

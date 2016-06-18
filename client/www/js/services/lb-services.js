@@ -1149,82 +1149,82 @@ module.factory(
       { 'id': '@id' },
       {
 
-        // INTERNAL. Use Instrument.users.findById() instead.
-        "prototype$__findById__users": {
+        // INTERNAL. Use Instrument.clients.findById() instead.
+        "prototype$__findById__clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/:fk",
+          url: urlBase + "/Instruments/:id/clients/:fk",
           method: "GET"
         },
 
-        // INTERNAL. Use Instrument.users.destroyById() instead.
-        "prototype$__destroyById__users": {
+        // INTERNAL. Use Instrument.clients.destroyById() instead.
+        "prototype$__destroyById__clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/:fk",
+          url: urlBase + "/Instruments/:id/clients/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Instrument.users.updateById() instead.
-        "prototype$__updateById__users": {
+        // INTERNAL. Use Instrument.clients.updateById() instead.
+        "prototype$__updateById__clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/:fk",
+          url: urlBase + "/Instruments/:id/clients/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Instrument.users.link() instead.
-        "prototype$__link__users": {
+        // INTERNAL. Use Instrument.clients.link() instead.
+        "prototype$__link__clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/rel/:fk",
+          url: urlBase + "/Instruments/:id/clients/rel/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Instrument.users.unlink() instead.
-        "prototype$__unlink__users": {
+        // INTERNAL. Use Instrument.clients.unlink() instead.
+        "prototype$__unlink__clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/rel/:fk",
+          url: urlBase + "/Instruments/:id/clients/rel/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Instrument.users.exists() instead.
-        "prototype$__exists__users": {
+        // INTERNAL. Use Instrument.clients.exists() instead.
+        "prototype$__exists__clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/rel/:fk",
+          url: urlBase + "/Instruments/:id/clients/rel/:fk",
           method: "HEAD"
         },
 
-        // INTERNAL. Use Instrument.users() instead.
-        "prototype$__get__users": {
+        // INTERNAL. Use Instrument.clients() instead.
+        "prototype$__get__clients": {
           isArray: true,
-          url: urlBase + "/Instruments/:id/users",
+          url: urlBase + "/Instruments/:id/clients",
           method: "GET"
         },
 
-        // INTERNAL. Use Instrument.users.create() instead.
-        "prototype$__create__users": {
-          url: urlBase + "/Instruments/:id/users",
+        // INTERNAL. Use Instrument.clients.create() instead.
+        "prototype$__create__clients": {
+          url: urlBase + "/Instruments/:id/clients",
           method: "POST"
         },
 
-        // INTERNAL. Use Instrument.users.destroyAll() instead.
-        "prototype$__delete__users": {
-          url: urlBase + "/Instruments/:id/users",
+        // INTERNAL. Use Instrument.clients.destroyAll() instead.
+        "prototype$__delete__clients": {
+          url: urlBase + "/Instruments/:id/clients",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Instrument.users.count() instead.
-        "prototype$__count__users": {
-          url: urlBase + "/Instruments/:id/users/count",
+        // INTERNAL. Use Instrument.clients.count() instead.
+        "prototype$__count__clients": {
+          url: urlBase + "/Instruments/:id/clients/count",
           method: "GET"
         },
 
@@ -1885,27 +1885,27 @@ module.factory(
 
     /**
      * @ngdoc object
-     * @name lbServices.Instrument.users
-     * @header lbServices.Instrument.users
+     * @name lbServices.Instrument.clients
+     * @header lbServices.Instrument.clients
      * @object
      * @description
      *
-     * The object `Instrument.users` groups methods
+     * The object `Instrument.clients` groups methods
      * manipulating `Client` instances related to `Instrument`.
      *
-     * Call {@link lbServices.Instrument#users Instrument.users()}
+     * Call {@link lbServices.Instrument#clients Instrument.clients()}
      * to query all related instances.
      */
 
 
         /**
          * @ngdoc method
-         * @name lbServices.Instrument#users
+         * @name lbServices.Instrument#clients
          * @methodOf lbServices.Instrument
          *
          * @description
          *
-         * Queries users of Instrument.
+         * Queries clients of Instrument.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1928,20 +1928,20 @@ module.factory(
          * This usually means the response is a `Client` object.)
          * </em>
          */
-        R.users = function() {
+        R.clients = function() {
           var TargetResource = $injector.get("Client");
-          var action = TargetResource["::get::Instrument::users"];
+          var action = TargetResource["::get::Instrument::clients"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Instrument.users#count
-         * @methodOf lbServices.Instrument.users
+         * @name lbServices.Instrument.clients#count
+         * @methodOf lbServices.Instrument.clients
          *
          * @description
          *
-         * Counts users of Instrument.
+         * Counts clients of Instrument.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -1963,20 +1963,20 @@ module.factory(
          *
          *  - `count` – `{number=}` - 
          */
-        R.users.count = function() {
+        R.clients.count = function() {
           var TargetResource = $injector.get("Client");
-          var action = TargetResource["::count::Instrument::users"];
+          var action = TargetResource["::count::Instrument::clients"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Instrument.users#create
-         * @methodOf lbServices.Instrument.users
+         * @name lbServices.Instrument.clients#create
+         * @methodOf lbServices.Instrument.clients
          *
          * @description
          *
-         * Creates a new instance in users of this model.
+         * Creates a new instance in clients of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -2001,20 +2001,20 @@ module.factory(
          * This usually means the response is a `Client` object.)
          * </em>
          */
-        R.users.create = function() {
+        R.clients.create = function() {
           var TargetResource = $injector.get("Client");
-          var action = TargetResource["::create::Instrument::users"];
+          var action = TargetResource["::create::Instrument::clients"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Instrument.users#createMany
-         * @methodOf lbServices.Instrument.users
+         * @name lbServices.Instrument.clients#createMany
+         * @methodOf lbServices.Instrument.clients
          *
          * @description
          *
-         * Creates a new instance in users of this model.
+         * Creates a new instance in clients of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -2039,20 +2039,20 @@ module.factory(
          * This usually means the response is a `Client` object.)
          * </em>
          */
-        R.users.createMany = function() {
+        R.clients.createMany = function() {
           var TargetResource = $injector.get("Client");
-          var action = TargetResource["::createMany::Instrument::users"];
+          var action = TargetResource["::createMany::Instrument::clients"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Instrument.users#destroyAll
-         * @methodOf lbServices.Instrument.users
+         * @name lbServices.Instrument.clients#destroyAll
+         * @methodOf lbServices.Instrument.clients
          *
          * @description
          *
-         * Deletes all users of this model.
+         * Deletes all clients of this model.
          *
          * @param {Object=} parameters Request parameters.
          *
@@ -2070,26 +2070,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.users.destroyAll = function() {
+        R.clients.destroyAll = function() {
           var TargetResource = $injector.get("Client");
-          var action = TargetResource["::delete::Instrument::users"];
+          var action = TargetResource["::delete::Instrument::clients"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Instrument.users#destroyById
-         * @methodOf lbServices.Instrument.users
+         * @name lbServices.Instrument.clients#destroyById
+         * @methodOf lbServices.Instrument.clients
          *
          * @description
          *
-         * Delete a related item by id for users.
+         * Delete a related item by id for clients.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for users
+         *  - `fk` – `{*}` - Foreign key for clients
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -2103,26 +2103,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.users.destroyById = function() {
+        R.clients.destroyById = function() {
           var TargetResource = $injector.get("Client");
-          var action = TargetResource["::destroyById::Instrument::users"];
+          var action = TargetResource["::destroyById::Instrument::clients"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Instrument.users#exists
-         * @methodOf lbServices.Instrument.users
+         * @name lbServices.Instrument.clients#exists
+         * @methodOf lbServices.Instrument.clients
          *
          * @description
          *
-         * Check the existence of users relation to an item by id.
+         * Check the existence of clients relation to an item by id.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for users
+         *  - `fk` – `{*}` - Foreign key for clients
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -2139,26 +2139,26 @@ module.factory(
          * This usually means the response is a `Client` object.)
          * </em>
          */
-        R.users.exists = function() {
+        R.clients.exists = function() {
           var TargetResource = $injector.get("Client");
-          var action = TargetResource["::exists::Instrument::users"];
+          var action = TargetResource["::exists::Instrument::clients"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Instrument.users#findById
-         * @methodOf lbServices.Instrument.users
+         * @name lbServices.Instrument.clients#findById
+         * @methodOf lbServices.Instrument.clients
          *
          * @description
          *
-         * Find a related item by id for users.
+         * Find a related item by id for clients.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for users
+         *  - `fk` – `{*}` - Foreign key for clients
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -2175,26 +2175,26 @@ module.factory(
          * This usually means the response is a `Client` object.)
          * </em>
          */
-        R.users.findById = function() {
+        R.clients.findById = function() {
           var TargetResource = $injector.get("Client");
-          var action = TargetResource["::findById::Instrument::users"];
+          var action = TargetResource["::findById::Instrument::clients"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Instrument.users#link
-         * @methodOf lbServices.Instrument.users
+         * @name lbServices.Instrument.clients#link
+         * @methodOf lbServices.Instrument.clients
          *
          * @description
          *
-         * Add a related item by id for users.
+         * Add a related item by id for clients.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for users
+         *  - `fk` – `{*}` - Foreign key for clients
          *
          * @param {Object} postData Request data.
          *
@@ -2215,26 +2215,26 @@ module.factory(
          * This usually means the response is a `Client` object.)
          * </em>
          */
-        R.users.link = function() {
+        R.clients.link = function() {
           var TargetResource = $injector.get("Client");
-          var action = TargetResource["::link::Instrument::users"];
+          var action = TargetResource["::link::Instrument::clients"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Instrument.users#unlink
-         * @methodOf lbServices.Instrument.users
+         * @name lbServices.Instrument.clients#unlink
+         * @methodOf lbServices.Instrument.clients
          *
          * @description
          *
-         * Remove the users relation to an item by id.
+         * Remove the clients relation to an item by id.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for users
+         *  - `fk` – `{*}` - Foreign key for clients
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -2248,26 +2248,26 @@ module.factory(
          *
          * This method returns no data.
          */
-        R.users.unlink = function() {
+        R.clients.unlink = function() {
           var TargetResource = $injector.get("Client");
-          var action = TargetResource["::unlink::Instrument::users"];
+          var action = TargetResource["::unlink::Instrument::clients"];
           return action.apply(R, arguments);
         };
 
         /**
          * @ngdoc method
-         * @name lbServices.Instrument.users#updateById
-         * @methodOf lbServices.Instrument.users
+         * @name lbServices.Instrument.clients#updateById
+         * @methodOf lbServices.Instrument.clients
          *
          * @description
          *
-         * Update a related item by id for users.
+         * Update a related item by id for clients.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `fk` – `{*}` - Foreign key for users
+         *  - `fk` – `{*}` - Foreign key for clients
          *
          * @param {Object} postData Request data.
          *
@@ -2288,9 +2288,9 @@ module.factory(
          * This usually means the response is a `Client` object.)
          * </em>
          */
-        R.users.updateById = function() {
+        R.clients.updateById = function() {
           var TargetResource = $injector.get("Client");
-          var action = TargetResource["::updateById::Instrument::users"];
+          var action = TargetResource["::updateById::Instrument::clients"];
           return action.apply(R, arguments);
         };
 
@@ -3242,89 +3242,89 @@ module.factory(
           method: "POST"
         },
 
-        // INTERNAL. Use Instrument.users.findById() instead.
-        "::findById::Instrument::users": {
+        // INTERNAL. Use Instrument.clients.findById() instead.
+        "::findById::Instrument::clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/:fk",
+          url: urlBase + "/Instruments/:id/clients/:fk",
           method: "GET"
         },
 
-        // INTERNAL. Use Instrument.users.destroyById() instead.
-        "::destroyById::Instrument::users": {
+        // INTERNAL. Use Instrument.clients.destroyById() instead.
+        "::destroyById::Instrument::clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/:fk",
+          url: urlBase + "/Instruments/:id/clients/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Instrument.users.updateById() instead.
-        "::updateById::Instrument::users": {
+        // INTERNAL. Use Instrument.clients.updateById() instead.
+        "::updateById::Instrument::clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/:fk",
+          url: urlBase + "/Instruments/:id/clients/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Instrument.users.link() instead.
-        "::link::Instrument::users": {
+        // INTERNAL. Use Instrument.clients.link() instead.
+        "::link::Instrument::clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/rel/:fk",
+          url: urlBase + "/Instruments/:id/clients/rel/:fk",
           method: "PUT"
         },
 
-        // INTERNAL. Use Instrument.users.unlink() instead.
-        "::unlink::Instrument::users": {
+        // INTERNAL. Use Instrument.clients.unlink() instead.
+        "::unlink::Instrument::clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/rel/:fk",
+          url: urlBase + "/Instruments/:id/clients/rel/:fk",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Instrument.users.exists() instead.
-        "::exists::Instrument::users": {
+        // INTERNAL. Use Instrument.clients.exists() instead.
+        "::exists::Instrument::clients": {
           params: {
           'fk': '@fk'
           },
-          url: urlBase + "/Instruments/:id/users/rel/:fk",
+          url: urlBase + "/Instruments/:id/clients/rel/:fk",
           method: "HEAD"
         },
 
-        // INTERNAL. Use Instrument.users() instead.
-        "::get::Instrument::users": {
+        // INTERNAL. Use Instrument.clients() instead.
+        "::get::Instrument::clients": {
           isArray: true,
-          url: urlBase + "/Instruments/:id/users",
+          url: urlBase + "/Instruments/:id/clients",
           method: "GET"
         },
 
-        // INTERNAL. Use Instrument.users.create() instead.
-        "::create::Instrument::users": {
-          url: urlBase + "/Instruments/:id/users",
+        // INTERNAL. Use Instrument.clients.create() instead.
+        "::create::Instrument::clients": {
+          url: urlBase + "/Instruments/:id/clients",
           method: "POST"
         },
 
-        // INTERNAL. Use Instrument.users.createMany() instead.
-        "::createMany::Instrument::users": {
+        // INTERNAL. Use Instrument.clients.createMany() instead.
+        "::createMany::Instrument::clients": {
           isArray: true,
-          url: urlBase + "/Instruments/:id/users",
+          url: urlBase + "/Instruments/:id/clients",
           method: "POST"
         },
 
-        // INTERNAL. Use Instrument.users.destroyAll() instead.
-        "::delete::Instrument::users": {
-          url: urlBase + "/Instruments/:id/users",
+        // INTERNAL. Use Instrument.clients.destroyAll() instead.
+        "::delete::Instrument::clients": {
+          url: urlBase + "/Instruments/:id/clients",
           method: "DELETE"
         },
 
-        // INTERNAL. Use Instrument.users.count() instead.
-        "::count::Instrument::users": {
-          url: urlBase + "/Instruments/:id/users/count",
+        // INTERNAL. Use Instrument.clients.count() instead.
+        "::count::Instrument::clients": {
+          url: urlBase + "/Instruments/:id/clients/count",
           method: "GET"
         },
 
