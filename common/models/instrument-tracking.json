@@ -5,7 +5,12 @@
   "options": {
     "validateUpsert": true
   },
-  "properties": {},
+  "properties": {
+    "sense": {
+      "type": "number",
+      "required": true
+    }
+  },
   "validations": [],
   "relations": {
     "instrument": {

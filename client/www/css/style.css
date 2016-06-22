@@ -3,3 +3,14 @@
 .hand {
     cursor: pointer;
 }
+
+div.market_sense_padding {
+    /*padding: 2cm 5cm 2cm 5cm;*/
+    padding-left: 10%;
+    padding-right: 10%;
+    border: none !important;
+}
+
+div.no_border {
+    border: none !important;
+}
