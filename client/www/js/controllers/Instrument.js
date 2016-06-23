@@ -4,7 +4,8 @@ angular.module('app')
         InstrumentTracking.find({  filter: { where: {userID:$rootScope.currentUser.id}, include:['instrument'] }})
             .$promise
             .then(function(userTrackedInstruments) {
-                    $scope.instrumentTracking=[]
+                    if(angular.isUndefined($rootScope.instrumentTracking))
+                        $rootScope.instrumentTracking=[];
                     angular.forEach(userTrackedInstruments, function(value) {
                         $scope.instrumentTracking.push(value.instrument);
                         console.log("value="+JSON.stringify(value.instrument));
