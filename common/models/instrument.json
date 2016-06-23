@@ -8,7 +8,8 @@
   "properties": {
     "name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "id": true
     },
     "displayName": {
       "type": "string",
