@@ -1,18 +1,18 @@
 angular.module('app')
-		.controller('SetSenseCtrl', ['$rootScope', '$scope', 'Instrument', 'Client', 'User','InstrumentTracking','$location', function($rootScope, $scope, Instrument, Client, User, InstrumentTracking, $location) {
+		.controller('SetSenseCtrl', ['$rootScope', '$scope', 'Instrument', 'Client', 'User','InstrumentTracking','$location','$stateParams', function($rootScope, $scope, Instrument, Client, User, InstrumentTracking, $location,$stateParams) {
 			$scope.sense = 0.5;
 
-
+			Instrument.getPrice({instrument:$stateParams.instrumentToTrack.name}).$promise.then(
+					function(response) {
+						$scope.ask =  response.price.ask;
+						$scope.bid =  response.price.bid;
+					});
 
 			$scope.submit = function(instrument, newSense) {
-				console.log("submit " + JSON.stringify(instrument));
-				console.log("sense " + newSense);
-				console.log("instID " + instrument.name);
-				console.log("userID " + $rootScope.currentUser.id);
-
-				InstrumentTracking.create({sense:newSense, instID:instrument.name, userID:$rootScope.currentUser.id});
+				InstrumentTracking.create({sense:newSense, instID:instrument.name, userID:$rootScope.currentUser.id, startPrice:$scope.ask});
 				if(angular.isUndefined($rootScope.instrumentTracking))
 					$rootScope.instrumentTracking=[];
 				$scope.instrumentTracking.push(instrument);
+				$location.path('instrument-list');
 			}
 		}]);

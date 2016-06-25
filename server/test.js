@@ -5,9 +5,16 @@ var boot     = require('loopback-boot');
  * Created by giladba on 6/5/2016.
  */
 var myFunc  = function(app) {
-    var Client = app.models.Client;
+    //var Client = app.models.Client;
     var Instrument = app.models.Instrument;
 
+    Instrument.getPrice("DE30_EUR", function(err,price){
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log(price);
+    });
     //
     //Client.create(
     //    {name:"aaa", password:"bbb", email:"aaa@gmail.com"},
@@ -36,45 +43,45 @@ var myFunc  = function(app) {
     //    console.log(JSON.stringify(c2));
     //});
 
-    Instrument.find({where:{name:"XPD_USD"}}
-        ,function(err, inst) {
-            console.log("inst = " + JSON.stringify(inst));
-
-            Client.find({where:{username:"natan"}}
-                ,function(err, output) {
-                    if (err) {
-                        console.log(err);
-                        return;
-                    }
-                    console.log("output = " + JSON.stringify(output));
-                    var client = output[0];
-                    console.log("client = " + JSON.stringify(client));
-                    client.instruments.create({name:"A", displayName:"B", pip:1.5, maxTradeUnits:3} ,function(err,created) {
-                        if (err) {
-                            console.log(err);
-                            return;
-                        }
-
-                        Instrument.find({where:{name:"A"}}
-                            ,function(err, f) {
-                                console.log("FFFFFF="+ JSON.stringify(f));
-
-                            });
-
-                        console.log("created inst = " + JSON.stringify(created));
-
-                        client.instruments({},function(err,res){
-                            if(err) {
-                                console.log("ERRRRRRORRRRRRRR");
-                                console.log(err);
-                                return;
-                            }
-                            console.log("found by id = " + JSON.stringify(res));
-                        });
-                    });
-                }
-            );
-        });
+    //Instrument.find({where:{name:"XPD_USD"}}
+    //    ,function(err, inst) {
+    //        console.log("inst = " + JSON.stringify(inst));
+	//
+    //        Client.find({where:{username:"natan"}}
+    //            ,function(err, output) {
+    //                if (err) {
+    //                    console.log(err);
+    //                    return;
+    //                }
+    //                console.log("output = " + JSON.stringify(output));
+    //                var client = output[0];
+    //                console.log("client = " + JSON.stringify(client));
+    //                client.instruments.create({name:"A", displayName:"B", pip:1.5, maxTradeUnits:3} ,function(err,created) {
+    //                    if (err) {
+    //                        console.log(err);
+    //                        return;
+    //                    }
+	//
+    //                    Instrument.find({where:{name:"A"}}
+    //                        ,function(err, f) {
+    //                            console.log("FFFFFF="+ JSON.stringify(f));
+	//
+    //                        });
+	//
+    //                    console.log("created inst = " + JSON.stringify(created));
+	//
+    //                    client.instruments({},function(err,res){
+    //                        if(err) {
+    //                            console.log("ERRRRRRORRRRRRRR");
+    //                            console.log(err);
+    //                            return;
+    //                        }
+    //                        console.log("found by id = " + JSON.stringify(res));
+    //                    });
+    //                });
+    //            }
+    //        );
+    //    });
 
 
 

@@ -10,11 +10,15 @@
       "type": "string",
       "required": true
     },
-    "rate": {
+    "bid": {
       "type": "number",
       "required": true
     },
-    "date": {
+    "ask": {
+      "type": "number",
+      "required": true
+    },
+    "time": {
       "type": "date",
       "required": true
     }

@@ -9,6 +9,10 @@
     "sense": {
       "type": "number",
       "required": true
+    },
+    "startPrice":{
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],

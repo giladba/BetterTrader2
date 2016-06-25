@@ -1650,6 +1650,40 @@ module.factory(
           method: "POST"
         },
 
+        /**
+         * @ngdoc method
+         * @name lbServices.Instrument#getPrice
+         * @methodOf lbServices.Instrument
+         *
+         * @description
+         *
+         * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `instrument` – `{string=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `price` – `{object=}` - 
+         */
+        "getPrice": {
+          url: urlBase + "/Instruments/getPrice",
+          method: "GET"
+        },
+
         // INTERNAL. Use Client.instruments.findById() instead.
         "::findById::Client::instruments": {
           params: {
@@ -5090,6 +5124,40 @@ module.factory(
         "createChangeStream": {
           url: urlBase + "/Rates/change-stream",
           method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Rate#getLatestRate
+         * @methodOf lbServices.Rate
+         *
+         * @description
+         *
+         * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `instrument` – `{string=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `price` – `{object=}` - 
+         */
+        "getLatestRate": {
+          url: urlBase + "/Rates/getLatestRate",
+          method: "GET"
         },
       }
     );

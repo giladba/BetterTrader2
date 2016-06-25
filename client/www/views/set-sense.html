@@ -3,7 +3,7 @@
     <ion-content>
         <div class="card">
             <div class="item item-text-wrap">
-                <h1>{{$stateParams.instrumentToTrack.displayName}}</h1><span class="item-note"> <h1>38.5 </h1></span>
+                <h1>{{$stateParams.instrumentToTrack.displayName}}</h1><span class="item-note"> <h1>{{ask}}</h1></span>
             </div>
         </div>
 
@@ -16,9 +16,6 @@
         </div>
 
         <div class="row col text-center">
-            <button class="button button-royal" ng-click="cancel()">
-                <i class="ion-android-cancel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cancel</i>
-            </button>
             <button class="button button-royal" ng-click="submit($stateParams.instrumentToTrack, sense)">
                 <i class="ion-android-done">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Submit</i>
             </button>

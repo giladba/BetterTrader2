@@ -7,18 +7,16 @@ angular.module('app')
                     if(angular.isUndefined($rootScope.instrumentTracking))
                         $rootScope.instrumentTracking=[];
                     angular.forEach(userTrackedInstruments, function(value) {
+                        console.log("push " + JSON.stringify(value.instrument));
                         $scope.instrumentTracking.push(value.instrument);
-                        console.log("value="+JSON.stringify(value.instrument));
                     });
-                    console.log("Inst="+JSON.stringify($scope.instrumentTracking));
-                }
-
-            );
+                });
 
         $scope.gotoTrackNew = function() {
             console.log("clicked");
             $location.path('track-new');
         }
+
 
         //Client
         //    .find({  filter: { where: {id: $rootScope.currentUser.id}}})
